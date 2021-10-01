@@ -59,8 +59,6 @@ const personalMovieDB = {
     showMyDB: function (hidden) {
         if (!hidden) {
             console.log(personalMovieDB);
-        } else {
-            console.log('Access defined!');
         }
     },
     toggleVisibleMyDB: function() {
@@ -69,6 +67,7 @@ const personalMovieDB = {
         } else {
             personalMovieDB.privat = false;
         }
+        this.showMyDB();
     },
     writeYourGenres: function writeYourGenres() {
         for( let i=0; i < 3; i++) {
@@ -79,9 +78,6 @@ const personalMovieDB = {
 
 console.log(personalMovieDB.privat);
 personalMovieDB.toggleVisibleMyDB();
-personalMovieDB.showMyDB();
-personalMovieDB.toggleVisibleMyDB();
-personalMovieDB.showMyDB();
 
 
 // Код возьмите из предыдущего домашнего задания
