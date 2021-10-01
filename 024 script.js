@@ -13,5 +13,64 @@
 "Любимый жанр #(номер по порядку, начиная с 1) - это (название из массива)"*/
 
 'use strict';
+let numberOfFilms;
+
+
+
+
+const personalMovieDB = {
+    count: numberOfFilms,
+    movies: {},
+    actors: {},/*  */
+    genres: [],
+    privat: false,
+    start: function start() {
+        numberOfFilms = +prompt('Сколько фильмов вы посмотрели? ', '');
+        while (numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms)) {
+            numberOfFilms = +prompt('Сколько фильмов вы посмотрели? ', '');
+        }
+    },
+    rememberMyFilms: function () {
+        for (let i =0; i <2; i++) {
+            const a = prompt('Один из последних просмотренных фильмов?', ''),
+                b = prompt('На сколько вы оцените его?', '');
+            if (a != null && b !=null && a != '' && b != '' && a.length <50 ) {
+                personalMovieDB.movies[a] = b;
+                console.log('done');
+            } else {
+                console.log('error');
+                i--;
+            }
+        }
+    },
+    detectPersonalLevel: function () {
+        if (personalMovieDB.count < 10 && personalMovieDB.count > 0){
+            console.log("Просмотрено довольно мало фильмов");
+        } 
+        else if (personalMovieDB.count < 30 && personalMovieDB.count > 0) {
+            console.log("Вы классический зритель");
+        }
+        else if (personalMovieDB.count > 30) {
+            console.log("Вы киноман!!");
+        }
+        else {
+            console.log("Ошибочное значение!");
+        }
+    
+        detectPersonalLevel();
+    },
+    showMyDB: function (hidden) {
+        if (!hidden) {
+            console.log(personalMovieDB);
+        }
+    },
+    writeYourGenres: function writeYourGenres() {
+        for( let i=0; i < 3; i++) {
+            personalMovieDB.genres[i] = prompt(`Ваш любимы жанр под номером ${i+1}` );
+        }
+    }
+};
+
+
 
 // Код возьмите из предыдущего домашнего задания
