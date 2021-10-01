@@ -15,9 +15,6 @@
 'use strict';
 let numberOfFilms;
 
-
-
-
 const personalMovieDB = {
     count: numberOfFilms,
     movies: {},
@@ -70,6 +67,8 @@ const personalMovieDB = {
         }
     }
 };
+
+personalMovieDB.start();
 
 
 
