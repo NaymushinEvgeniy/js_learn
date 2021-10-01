@@ -78,6 +78,8 @@ const personalMovieDB = {
 console.log(personalMovieDB.privat);
 personalMovieDB.toggleVisibleMyDB();
 personalMovieDB.showMyDB();
+personalMovieDB.toggleVisibleMyDB();
+personalMovieDB.showMyDB();
 
 
 // Код возьмите из предыдущего домашнего задания
