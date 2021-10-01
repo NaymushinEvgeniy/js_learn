@@ -41,13 +41,13 @@ const personalMovieDB = {
         }
     },
     detectPersonalLevel: function () {
-        if (this.count < 10 && this.count > 0){
+        if (personalMovieDB.count < 10 && personalMovieDB.count > 0){
             console.log("Просмотрено довольно мало фильмов");
         } 
-        else if (this.count < 30 && this.count > 0) {
+        else if (personalMovieDB.count < 30 && personalMovieDB.count > 0) {
             console.log("Вы классический зритель");
         }
-        else if (this.count > 30) {
+        else if (personalMovieDB.count > 30) {
             console.log("Вы киноман!!");
         }
         else {
@@ -70,8 +70,6 @@ const personalMovieDB = {
 
 personalMovieDB.start();
 personalMovieDB.rememberMyFilms();
-personalMovieDB.detectPersonalLevel();
-personalMovieDB.showMyDB();
 console.log(personalMovieDB);
 
 
