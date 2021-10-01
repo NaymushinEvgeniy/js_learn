@@ -59,6 +59,8 @@ const personalMovieDB = {
     showMyDB: function (hidden) {
         if (!hidden) {
             console.log(personalMovieDB);
+        } else {
+            console.log('Access defined!');
         }
     },
     toggleVisibleMyDB: function() {
