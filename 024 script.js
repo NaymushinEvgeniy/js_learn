@@ -13,18 +13,17 @@
 "Любимый жанр #(номер по порядку, начиная с 1) - это (название из массива)"*/
 
 'use strict';
-let numberOfFilms;
 
 const personalMovieDB = {
-    count: numberOfFilms,
+    count: 0,
     movies: {},
-    actors: {},/*  */
+    actors: {},
     genres: [],
     privat: false,
     start: function start() {
-        numberOfFilms = +prompt('Сколько фильмов вы посмотрели? ', '');
-        while (numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms)) {
-            numberOfFilms = +prompt('Сколько фильмов вы посмотрели? ', '');
+        personalMovieDB.count = +prompt('Сколько фильмов вы посмотрели? ', '');
+        while (personalMovieDB.count == '' || personalMovieDB.count == null || isNaN(personalMovieDB.count)) {
+            personalMovieDB.count = +prompt('Сколько фильмов вы посмотрели? ', '');
         }
     },
     rememberMyFilms: function () {
@@ -53,8 +52,6 @@ const personalMovieDB = {
         else {
             console.log("Ошибочное значение!");
         }
-    
-        detectPersonalLevel();
     },
     showMyDB: function (hidden) {
         if (!hidden) {
@@ -69,15 +66,22 @@ const personalMovieDB = {
         }
         this.showMyDB();
     },
-    writeYourGenres: function writeYourGenres() {
+    writeYourGenres: function () {
         for( let i=0; i < 3; i++) {
             personalMovieDB.genres[i] = prompt(`Ваш любимы жанр под номером ${i+1}` );
+            if (personalMovieDB.genres[i]==null || personalMovieDB.genres[i]=='') {
+                i = -1;
+            } 
         }
+    },
+    showMyLoveGenres: function() {
+        personalMovieDB.genres.forEach(element => {
+            console.log(element);
+        });
     }
 };
 
-console.log(personalMovieDB.privat);
-personalMovieDB.toggleVisibleMyDB();
-
+personalMovieDB.writeYourGenres();
+personalMovieDB.showMyLoveGenres();
 
 // Код возьмите из предыдущего домашнего задания
