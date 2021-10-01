@@ -62,10 +62,10 @@ const personalMovieDB = {
         }
     },
     toggleVisibleMyDB: function() {
-        if (this.privat == false) {
-            this.privat = true;
+        if (personalMovieDB.privat == false) {
+            personalMovieDB.privat = true;
         } else {
-            this.privat = false;
+            personalMovieDB.privat = false;
         }
     },
     writeYourGenres: function writeYourGenres() {
