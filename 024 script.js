@@ -61,6 +61,13 @@ const personalMovieDB = {
             console.log(personalMovieDB);
         }
     },
+    toggleVisibleMyDB: function() {
+        if (this.privat == false) {
+            this.privat = true;
+        } else {
+            this.privat = false;
+        }
+    },
     writeYourGenres: function writeYourGenres() {
         for( let i=0; i < 3; i++) {
             personalMovieDB.genres[i] = prompt(`Ваш любимы жанр под номером ${i+1}` );
@@ -68,10 +75,9 @@ const personalMovieDB = {
     }
 };
 
-personalMovieDB.start();
-personalMovieDB.rememberMyFilms();
-console.log(personalMovieDB);
-
+console.log(personalMovieDB.privat);
+personalMovieDB.toggleVisibleMyDB();
+console.log(personalMovieDB.privat);
 
 
 // Код возьмите из предыдущего домашнего задания
