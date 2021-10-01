@@ -77,7 +77,7 @@ const personalMovieDB = {
 
 console.log(personalMovieDB.privat);
 personalMovieDB.toggleVisibleMyDB();
-console.log(personalMovieDB.privat);
+personalMovieDB.showMyDB();
 
 
 // Код возьмите из предыдущего домашнего задания
