@@ -59,10 +59,10 @@ const personalMovieDB = {
         }
     },
     toggleVisibleMyDB: function() {
-        if (personalMovieDB.privat == false) {
-            personalMovieDB.privat = true;
-        } else {
+        if (personalMovieDB.privat) {
             personalMovieDB.privat = false;
+        } else {
+            personalMovieDB.privat = true;
         }
         this.showMyDB();
     },
